@@ -1,0 +1,10 @@
+echo Catching up...
+echo Downloading the latest code...
+git checkout -q .
+git clean -qdf
+git pull -q
+bundle install --quiet
+echo Resetting your database...
+rake db:migrate:reset
+echo
+echo "You have caught up! BUT: you might need to stop your Rails server and then start it up again."
