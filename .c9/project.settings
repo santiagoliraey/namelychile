@@ -2,7 +2,7 @@
     "ace": {
         "@guessTabSize": "true",
         "@newLineMode": "unix",
-        "@tabSize": "2",
+        "@tabSize": 2,
         "@useSoftTabs": "true"
     },
     "build": {
@@ -17,11 +17,10 @@
         "@stripws": false
     },
     "language": {
-        "@eslintrc": "true",
-        "@instanceHighlight": "true",
-        "@semi": "true",
-        "@undeclaredVars": "true",
-        "@unusedFunctionArgs": "false",
+        "@eslintrc": true,
+        "@semi": true,
+        "@undeclaredVars": true,
+        "@unusedFunctionArgs": false,
         "@warnLevel": "info",
         "tern_defs": {
             "json()": {
@@ -46,7 +45,14 @@
         "@runner": "Ruby on Rails (default)",
         "configs": {
             "@inited": "true",
-            "json()": {}
+            "json()": {
+                "Ruby on Rails": {
+                    "command": "",
+                    "default": true,
+                    "name": "Ruby on Rails",
+                    "runner": "Ruby on Rails (default)"
+                }
+            }
         }
     },
     "share": {
