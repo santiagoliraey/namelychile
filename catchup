@@ -5,6 +5,6 @@ git clean -qdf
 git pull -q
 bundle install --quiet --without production
 echo Resetting your database...
-rake db:migrate:reset
+bundle exec rake db:migrate:reset
 echo
 echo "You are now caught up (you might need to stop your Rails server and then start it up again)."
