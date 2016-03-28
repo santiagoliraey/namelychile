@@ -1,9 +1,11 @@
-# KIEI-925 Starter Template
+# Welcome to Your New App!
 
-This project is provided as a convenient starting point.
+Get started in 3 easy steps:
 
-Specify this URL as a Git clone when setting up a new Cloud9 workspace.
+1. In your **Terminal pane**, enter: `bundle`
+2. Click the green **Run** button (or use the menu `Run > Run With > Ruby on Rails (stable + Ruby 2.2)`)
+3. There is no step 3.
 
-Insider your workspace terminal, this command will help you catchup in class:
+If you're in class and fall behind, you can run this command to catch up:
 
 `./catchup`
