@@ -13,4 +13,29 @@
 
 ActiveRecord::Schema.define(version: 0) do
 
+  create_table "departments", force: :cascade do |t|
+    t.text    "name"
+    t.integer "division_id"
+  end
+
+  add_index "departments", ["division_id"], name: "index_departments_on_division_id"
+
+  create_table "divisions", force: :cascade do |t|
+    t.text "name"
+  end
+
+  create_table "employees", force: :cascade do |t|
+    t.text    "name"
+    t.integer "division_id"
+    t.integer "department_id"
+    t.integer "ssn"
+    t.integer "birth"
+    t.integer "enroll"
+    t.text    "healthplan"
+    t.integer "grosswage"
+  end
+
+  add_index "employees", ["department_id"], name: "index_employees_on_department_id"
+  add_index "employees", ["division_id"], name: "index_employees_on_division_id"
+
 end

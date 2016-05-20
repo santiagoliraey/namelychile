@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
-  # TO DO: Put your routes code here.
+  root 'companies#index'
+
+  resources :companies
+  resources :departments
+  resources :divisions
+  resources :employees
 
 end
