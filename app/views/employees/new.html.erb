@@ -1,0 +1,21 @@
+<div class="row">
+
+  <div class="col-sm-4">
+    <h1>Add a New Employee</h1>
+  </div>
+  <div class="col-sm-4">
+
+    <%= bootstrap_form_for(@employee) do |form| %>
+
+      <%= form.text_field :name, label: "Name" %>
+      <%= form.number_field :ssn, label: "Social Security Number" %>
+      <%= form.date_field :birth, label: "Date of Birth" %>
+      <%= form.submit class: 'btn btn-success'%>
+
+      or
+      
+      <%= link_to "Cancel", "/employees" %>
+    <% end %>
+
+</div>
+</div>

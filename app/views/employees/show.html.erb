@@ -1,0 +1,13 @@
+<div class="row">
+
+  <p class="title1"><%= @employee.name %></p>
+    <div class="edit-delete">
+       <b> <%= link_to 'Edit', {:action => 'edit', :id => @employee.id} %></b>
+       <b> <%= link_to "Delete", "/employees/#{@employee.id}", method: :delete, data: { confirm: "Are you sure?" } %></b>
+    </div>
+    <div class="employee">
+      <p class="number">Social Security Number: <%= @employee.ssn %></p>
+      <p class="date">Date of Birth: <%= @employee.birth %></p>
+    </div>
+
+</div>

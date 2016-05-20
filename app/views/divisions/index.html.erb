@@ -1,0 +1,31 @@
+<%= link_to "Add a New Division", "/divisions/new", class: 'btn btn-primary addnew' %>
+
+<%= link_to "Add a New Department", "/departments/new", class: 'btn btn-primary addnew' %>
+
+<div class="row">
+
+  <p class="title1">COMPANY</p>
+  <% @divisions.each do |division| %>
+    <div class="division">
+        <a href="/divisions/<%= division.id %>"><%= division.name %></a>
+        <% division.departments.each do |department| %>
+            <div class="department">
+              <a href="/departments/<%= department.id %>"><%= department.name %></a>
+            </div>
+        <% end %>
+    </div>
+  <% end %>
+
+</div>
+
+<div class="row">
+
+  <p class="title1">ALL DEPARTMENTS</p>
+  
+  <% Department.all.each do |department| %>
+    <div class="department">
+        <a href="/departments/<%= department.id %>"><%= department.name %></a>
+    </div>
+  <% end %>
+
+</div>

@@ -1,0 +1,29 @@
+<div class="row">
+
+  <p class="title1">Division:<%= @division.name %></p>
+  
+  <div class="division">
+       <b> <%= link_to 'Edit', {:action => 'edit', :id => @division.id} %></b>
+       <b> <%= link_to "Delete", "/divisions/#{@division.id}", method: :delete, data: { confirm: "Are you sure?" } %></b>
+  </div>
+    
+  <div>
+      <p class="title2">Departments of <%= @division.name %>:</p>
+      <% @division.departments.each do |department| %>
+          <div class="subtitle">
+            <a href="/departments/<%=department.id%>"><%= department.name %></a>
+          </div>
+      <% end %>
+  </div>
+    
+  <div>
+      <p class="title2">Employees of <%= @division.name %>:</p>
+      <% @division.employees.each do |employee| %>
+          <div class="subtitle">
+            <a href="/employees/<%=employee.id%>"><%= employee.name %></a>
+          </div>
+      <% end %>
+  </div>
+    
+
+</div>

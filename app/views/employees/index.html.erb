@@ -1,0 +1,13 @@
+<%= link_to "Add a New Employee", "/employees/new", class: 'btn btn-primary addnew' %>
+
+<div class="row">
+
+  <p class="title1">EMPLOYEES</p>
+  <% @employees.each do |employee| %>
+    <div class="employee">
+        <a href="/employees/<%= employee.id %>"><%= employee.name %></a>
+    </div>
+  <% end %>
+
+</div>
+

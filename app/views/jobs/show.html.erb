@@ -1,0 +1,15 @@
+<div class="row">
+
+  <p class="title1"><%= @job.name %></p>
+    <div class="edit-delete">
+       <b> <%= link_to 'Edit', {:action => 'edit', :id => @job.id} %></b>
+       <b> <%= link_to "Delete", "/employees/#{@job.id}", method: :delete, data: { confirm: "Are you sure?" } %></b>
+    </div>
+    <div class="employee">
+      <p class="text">Division:  <a href="/divisions/<%= @employee.division.id %>"><%= @employee.division.name %></a> </p>
+      <p class="text">Department: <a href="/departments/<%= @employee.department.id %>"><%= @employee.department.name %></a></p>
+      <p class="text">Health Plan: <%= @employee.healthplan %></p>
+      <p class="text">Monthly Gross Wage: <%= @employee.grosswage %></p>
+    </div>
+
+</div>

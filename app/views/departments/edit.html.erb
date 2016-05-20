@@ -1,0 +1,20 @@
+<div class="row">
+
+  <div class="col-sm-4">
+    <h1>Edit Department</h1>
+  </div>
+  <div class="col-sm-4">
+
+    <%= bootstrap_form_for(@department) do |form| %>
+
+      <%= form.text_field :name %>
+      <%= form.collection_select :division_id, Division.all, :id, :name %>
+      <%= form.submit class: 'btn btn-success'%>
+
+      or
+      
+      <%= link_to "Cancel", "/divisions" %>
+    <% end %>
+
+</div>
+</div>
