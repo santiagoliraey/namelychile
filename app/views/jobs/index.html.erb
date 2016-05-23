@@ -1,0 +1,11 @@
+<div class="row">
+
+  <p class="title1">Jobs</p>
+  <% @jobs.each do |job| %>
+    <div class="job">
+        <a href="/jobs/<%= job.id %>"><%= job.name %></a>
+    </div>
+  <% end %>
+
+</div>
+
