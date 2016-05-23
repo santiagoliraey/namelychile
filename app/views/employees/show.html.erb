@@ -1,13 +1,24 @@
 <div class="row">
 
   <p class="title1"><%= @employee.name %></p>
+  
     <div class="edit-delete">
        <b> <%= link_to 'Edit', {:action => 'edit', :id => @employee.id} %></b>
        <b> <%= link_to "Delete", "/employees/#{@employee.id}", method: :delete, data: { confirm: "Are you sure?" } %></b>
     </div>
+  
+    <div>
+      <%= image_tag @employee.image_url, :class=>"profile_picture"%> 
+    </div>
+    
     <div class="employee">
       <p class="number">Social Security Number: <%= @employee.ssn %></p>
       <p class="date">Date of Birth: <%= @employee.birth %></p>
+      <% @employee.jobs.each do |job| %>
+          <div>
+            Position: <a href="/jobs/<%=job.id%>"><%= job.name %> of <%= job.department.name %> </a>
+          </div>
+      <% end %>
     </div>
 
 </div>

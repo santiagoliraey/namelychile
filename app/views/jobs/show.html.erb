@@ -1,17 +1,16 @@
 <div class="row">
 
-  <p class="title1"><%= @job.name %></p>
+  <p class="title1"> <%= @job.name %> of <%= @job.department.name %>: <%= link_to @job.employee.name, "/employees/#{@job.employee_id}"%> </p>
     <div class="edit-delete">
        <b> <%= link_to 'Edit', {:action => 'edit', :id => @job.id} %></b>
-       <b> <%= link_to "Delete", "/employees/#{@job.id}", method: :delete, data: { confirm: "Are you sure?" } %></b>
+       <b> <%= link_to "Delete", "/jobs/#{@job.id}", method: :delete, data: { confirm: "Are you sure?" } %></b>
     </div>
     
     <div class="job">
-      <p class="text">Division:  <a href="/divisions/<%= @employee.division.id %>"><%= @employee.division.name %></a> </p>
-      
-      <p class="text">Department: <a href="/departments/<%= @employee.department.id %>"><%= @employee.department.name %></a></p>
-      <p class="text">Health Plan: <%= @employee.healthplan %></p>
-      <p class="text">Monthly Gross Wage: <%= @employee.grosswage %></p>
+      <p class="text">Division: <%= link_to @job.division.name, "/divisions/#{@job.division_id}"%></p>
+      <p class="text">Department: <%= link_to @job.department.name, "/departments/#{@job.department_id}"%></p>
+      <p class="text">Health Plan: <%= @job.healthplan %></p>
+      <p class="text">Monthly Gross Wage: <%= @job.grosswage %></p>
     </div>
 
 </div>

@@ -1,31 +1,26 @@
-<%= link_to "Add a New Division", "/divisions/new", class: 'btn btn-primary addnew' %>
-
-<%= link_to "Add a New Department", "/departments/new", class: 'btn btn-primary addnew' %>
 
 <div class="row">
-
-  <p class="title1">COMPANY</p>
-  <% @divisions.each do |division| %>
-    <div class="division">
-        <a href="/divisions/<%= division.id %>"><%= division.name %></a>
-        <% division.departments.each do |department| %>
-            <div class="department">
-              <a href="/departments/<%= department.id %>"><%= department.name %></a>
-            </div>
-        <% end %>
-    </div>
-  <% end %>
-
+  <div class="buttons">
+    <%= link_to "+ Division", "/divisions/new", class: 'btn btn-primary addnew' %>
+    <%= link_to "+ Department", "/departments/new", class: 'btn btn-primary addnew' %>
+  </div>
 </div>
 
-<div class="row">
-
-  <p class="title1">ALL DEPARTMENTS</p>
+<div class="row structure">
+  <p class="title1">COMPANY STRUCTURE</p>
   
-  <% Department.all.each do |department| %>
-    <div class="department">
-        <a href="/departments/<%= department.id %>"><%= department.name %></a>
+  <% @divisions.each do |division| %>
+    <div class="col-xs-8 col-sm-2">
+        <a class= "division" href="/divisions/<%= division.id %>"><%= division.name %></a>
+        <ul>
+          <% division.departments.each do |department| %>
+              <li class = "department"><%= link_to department.name, "/departments/#{department.id}", :class=>"department"%></li>
+          <% end %>
+        </ul>
     </div>
   <% end %>
-
 </div>
+
+
+
+

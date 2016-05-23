@@ -26,16 +26,23 @@ ActiveRecord::Schema.define(version: 0) do
 
   create_table "employees", force: :cascade do |t|
     t.text    "name"
+    t.integer "ssn"
+    t.date    "birth"
+    t.text    "image_url"
+  end
+
+  create_table "jobs", force: :cascade do |t|
+    t.text    "name"
+    t.integer "enroll"
     t.integer "division_id"
     t.integer "department_id"
-    t.integer "ssn"
-    t.integer "birth"
-    t.integer "enroll"
+    t.text    "employee_id"
     t.text    "healthplan"
     t.integer "grosswage"
   end
 
-  add_index "employees", ["department_id"], name: "index_employees_on_department_id"
-  add_index "employees", ["division_id"], name: "index_employees_on_division_id"
+  add_index "jobs", ["department_id"], name: "index_jobs_on_department_id"
+  add_index "jobs", ["division_id"], name: "index_jobs_on_division_id"
+  add_index "jobs", ["employee_id"], name: "index_jobs_on_employee_id"
 
 end

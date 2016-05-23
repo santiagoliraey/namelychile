@@ -16,14 +16,5 @@
       <% end %>
   </div>
     
-  <div>
-      <p class="title2">Employees of <%= @division.name %>:</p>
-      <% @division.employees.each do |employee| %>
-          <div class="subtitle">
-            <a href="/employees/<%=employee.id%>"><%= employee.name %></a>
-          </div>
-      <% end %>
-  </div>
-    
 
 </div>

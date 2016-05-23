@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   resources :departments
   resources :divisions
   resources :employees
+  resources :jobs
 
 end

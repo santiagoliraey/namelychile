@@ -1,17 +1,18 @@
 <div class="row">
 
-  <p class="title1">DEPARTMENT</p>
-    <div class="department">
-      <%= @department.name %>
+    <div class="title1">
+      <%= @department.name %> Department
+    </div>
+    <div class = "edit-delete">
        <b> <%= link_to 'Edit', {:action => 'edit', :id => @department.id} %></b>
        <b> <%= link_to "Delete", "/departments/#{@department.id}", method: :delete, data: { confirm: "Are you sure?" } %></b>
     </div>
 
   <div>
-      <p class="title2">Employees of <%= @department.name %></p>
-      <% @department.employees.each do |employee| %>
+      <p class="title2">Jobs of <%= @department.name %></p>
+      <% @department.jobs.each do |job| %>
           <div class="subtitle">
-            <a href="/employees/<%=employee.id%>"><%= employee.name %></a>
+            <a href="/jobs/<%=job.id%>"><%= job.name %></a>
           </div>
       <% end %>
   </div>

@@ -1,6 +1,6 @@
 class Division < ActiveRecord::Base
   
   has_many :departments
-  has_many :employees
-
+  has_many :jobs
+  
 end

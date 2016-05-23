@@ -1,7 +1,7 @@
 <div class="row">
 
   <div class="col-sm-4">
-    <h1>Edit Job</h1>
+    <h1 class="add">Edit Job</h1>
   </div>
   <div class="col-sm-4">
 
@@ -11,7 +11,10 @@
       <%= form.date_field :enroll %>
       <%= form.collection_select :division_id, Division.all, :id, :name %>
       <%= form.collection_select :department_id, Department.all, :id, :name %>
-      <%= form.number_field :healthplan %>
+      <%= form.collection_select :employee_id, Employee.all, :id, :name %>
+      <div class="form-group">
+        <%= form.select :healthplan, (options_for_select ["Aetna","Bluecross","Unicare","Wellpoint","Concordia"]) %> 
+      </div>
       <%= form.number_field :grosswage %>
       <%= form.submit class: 'btn btn-success'%>
 

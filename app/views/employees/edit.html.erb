@@ -1,7 +1,7 @@
 <div class="row">
 
   <div class="col-sm-4">
-    <h1>Edit Employee</h1>
+    <h1 class="add">Edit Employee</h1>
   </div>
   <div class="col-sm-4">
 
@@ -10,11 +10,7 @@
       <%= form.text_field :name %>
       <%= form.number_field :ssn %>
       <%= form.date_field :birth %>
-      <%= form.date_field :enroll %>
-      <%= form.collection_select :division_id, Division.all, :id, :name %>
-      <%= form.collection_select :department_id, Department.all, :id, :name %>
-      <%= form.number_field :healthplan %>
-      <%= form.number_field :grosswage %>
+      <%= form.url_field :image_url %>
       <%= form.submit class: 'btn btn-success'%>
 
       or

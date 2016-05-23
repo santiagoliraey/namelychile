@@ -9,12 +9,14 @@ Employee
   name: text
   ssn: integer
   birth: date
+  image_url: text
   
 Job
   name: text
   enroll: integer
   division_id: integer
   department_id: integer
+  employee_id: text
   healthplan: text
   grosswage: integer
   
