@@ -3,6 +3,8 @@
   <div class="buttons">
     <%= link_to "+ Division", "/divisions/new", class: 'btn btn-primary addnew' %>
     <%= link_to "+ Department", "/departments/new", class: 'btn btn-primary addnew' %>
+    <%= link_to "+ Role", "/roles/new", class: 'btn btn-primary addnew' %>
+    <%= link_to "See all employees and roles", "/all", class: 'all' %>
   </div>
 </div>
 
@@ -14,7 +16,10 @@
         <a class= "division" href="/divisions/<%= division.id %>"><%= division.name %></a>
         <ul>
           <% division.departments.each do |department| %>
-              <li class = "department"><%= link_to department.name, "/departments/#{department.id}", :class=>"department"%></li>
+              <p class = "department"><%= link_to department.name, "/departments/#{department.id}", :class=>"department"%></p>
+                <% @jobs.where(department_id: department.id).each do |job| %>
+                    <p class = "role"><%= link_to job.role.name, "/jobs/#{job.id}"%></p>
+                <% end %>
           <% end %>
         </ul>
     </div>

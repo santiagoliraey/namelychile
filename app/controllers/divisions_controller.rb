@@ -2,6 +2,7 @@ class DivisionsController < ApplicationController
 
   def index
     @divisions = Division.all
+    @jobs = Job.all
   end
 
   def new

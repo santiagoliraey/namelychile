@@ -1,0 +1,20 @@
+<div class="row">
+
+    <div class="title1">
+      <%= @role.name %> Role
+    </div>
+    <div class = "edit-delete">
+       <b> <%= link_to 'Edit', {:action => 'edit', :id => @role.id} %></b>
+       <b> <%= link_to "Delete", "/roles/#{@role.id}", method: :delete, data: { confirm: "Are you sure?" } %></b>
+    </div>
+
+  <div>
+      <p class="title2"><%= @role.name %>s</p>
+      <% @employees.where(id: @role.jobs).each do |employee| %>
+          <div class="subtitle">
+            <p><%= link_to employee.name, "/employees/#{employee.id}" %></p>
+          </div>
+      <% end %>
+  </div>
+
+</div>

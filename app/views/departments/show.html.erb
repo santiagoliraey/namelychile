@@ -7,14 +7,17 @@
        <b> <%= link_to 'Edit', {:action => 'edit', :id => @department.id} %></b>
        <b> <%= link_to "Delete", "/departments/#{@department.id}", method: :delete, data: { confirm: "Are you sure?" } %></b>
     </div>
-
-  <div>
-      <p class="title2">Jobs of <%= @department.name %></p>
-      <% @department.jobs.each do |job| %>
-          <div class="subtitle">
-            <a href="/jobs/<%=job.id%>"><%= job.name %></a>
-          </div>
+    
+    <div>
+      <p class="subtitle">Division: <%= link_to @department.division.name, "/divisions/#{@department.division_id}" %></p> 
+    </div>
+    
+    <div>
+      <p class="title2">Jobs of <%= @department.name %>: </p>
+      <% @jobs.where(department_id: @department.id).each do |job| %>
+          <p class = "subtitle"><%= link_to job.role.name, "/jobs/#{job.id}"%></p>
       <% end %>
-  </div>
+    </div>
+
 
 </div>

@@ -2,6 +2,7 @@ class DepartmentsController < ApplicationController
   
   def show
     @department = Department.find_by(id: params[:id])
+    @jobs = Job.all
   end
 
   def new

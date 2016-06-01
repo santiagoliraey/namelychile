@@ -14,10 +14,11 @@
     <div class="employee">
       <p class="number">Social Security Number: <%= @employee.ssn %></p>
       <p class="date">Date of Birth: <%= @employee.birth %></p>
-      <% @employee.jobs.each do |job| %>
-          <div>
-            Position: <a href="/jobs/<%=job.id%>"><%= job.name %> of <%= job.department.name %> </a>
-          </div>
+      <p class="date">Healthplan: <%= @employee.healthplan %></p>
+      <% @employee.jobs.each do |job|%>
+      <div> 
+        <p>Current Job: <a href="/jobs/<%=job.id%>"><%= job.role.name %> of <%=job.department.name%></a></p>
+      </div> 
       <% end %>
     </div>
 

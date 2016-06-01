@@ -1,0 +1,19 @@
+<div class="row">
+
+  <div class="col-sm-4">
+    <h1 class="add">Add a Role</h1>
+  </div>
+  <div class="col-sm-4">
+
+    <%= bootstrap_form_for(@role) do |form| %>
+
+      <%= form.text_field :name %>
+      <%= form.submit class: 'btn btn-success'%>
+      
+      or
+      
+      <%= link_to "Cancel", "/departments" %>
+    <% end %>
+
+</div>
+</div>

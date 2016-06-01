@@ -2,6 +2,7 @@ class EmployeesController < ApplicationController
 
   def index
     @employees = Employee.all
+    @departments = Department.all
     @divisions = Division.all
     @jobs = Job.all
   end
@@ -15,6 +16,7 @@ class EmployeesController < ApplicationController
     e.name = params["employee"]["name"]
     e.ssn = params["employee"]["ssn"]
     e.birth = params["employee"]["birth"]
+    e.healthplan = params["employee"]["healthplan"]
     e.image_url = params["employee"]["image_url"]
     e.save
 
@@ -36,6 +38,7 @@ class EmployeesController < ApplicationController
     @employee.ssn = params["employee"]["ssn"]
     @employee.birth = params["employee"]["birth"]
     @employee.image_url = params["employee"]["image_url"]
+    @employee.healthplan = params["employee"]["healthplan"]
     @employee.save
     
     redirect_to "/employees"

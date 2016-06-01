@@ -1,0 +1,15 @@
+<p class="title2">Employees</p>
+<% @employees.each do |employee|%>
+  <p class = "subtitle"><%= link_to employee.name, "/employees/#{employee.id}"%> 
+      <% employee.jobs.each do |job|%>
+        <%= job.role.name %>
+      <% end %>
+<% end %>
+
+<p class="title2">Roles</p>
+<% @roles.each do |role|%>
+  <p class = "subtitle"><%= link_to role.name, "/roles/#{role.id}"%> 
+      <% role.departments.each do |department|%>
+        <%= department.name %>
+      <% end %>
+<% end %>

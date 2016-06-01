@@ -20,7 +20,9 @@
   margin-bottom: 30px;
   margin-left: 30px;
 }
-
+.all{
+  margin-left: 10px;
+}
 
 
 .navbar{ 
@@ -51,12 +53,21 @@ background-color: #056095;
   color: #35383F;
 }
 .department{
-  margin-left: 7px;
-  color: grey;
+  color: #35383F;
+  margin-left: 3px;
+  margin-bottom: 3px;
+  margin-top: 3px;
 }
 .subtitle{
   margin-left: 30px;
   color: grey;
+}
+.role{
+  margin-left: 20px;
+  margin-bottom: 3px;
+  margin-top: 3px;
+  color: grey;
+  font-size: 12px;
 }
 
 

@@ -10,6 +10,9 @@
       <%= form.text_field :name %>
       <%= form.number_field :ssn %>
       <%= form.date_field :birth %>
+      <div class="form-group">
+        <%= form.select :healthplan, (options_for_select ["Aetna","Bluecross","Unicare","Wellpoint","Concordia"]) %> 
+      </div>
       <%= form.url_field :image_url %>
       <%= form.submit class: 'btn btn-success'%>
 

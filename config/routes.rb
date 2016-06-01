@@ -7,5 +7,8 @@ Rails.application.routes.draw do
   resources :divisions
   resources :employees
   resources :jobs
+  resources :roles
+  resources :links
+  resources :all
 
 end

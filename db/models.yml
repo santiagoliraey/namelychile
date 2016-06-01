@@ -10,14 +10,22 @@ Employee
   ssn: integer
   birth: date
   image_url: text
+  healthplan: text
   
 Job
-  name: text
-  enroll: integer
-  division_id: integer
+  employee_id: integer
+  role_id: integer
   department_id: integer
-  employee_id: text
-  healthplan: text
+  enroll: integer
   grosswage: integer
+  
+Role
+  name: text
+
+
+
+
+  
+
   
 

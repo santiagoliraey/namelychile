@@ -2,6 +2,7 @@
   <div class="buttons">
     <%= link_to "+ Employee", "/employees/new", class: 'btn btn-primary addnew' %>
     <%= link_to "+ Job", "/jobs/new", class: 'btn btn-primary addnew' %>
+    <%= link_to "See all employees and roles", "/all", class: 'all' %>
   </div>
 </div>
 
@@ -12,8 +13,9 @@
       
   <div class="employee_list container">
     <p class = "title1 "> <%= division.name%> </p>
-      <% division.jobs.each do |job|%>
-          <% Employee.where(id: job.employee_id).each do |employee|%>
+      <% division.departments.each do |department|%>
+        <% department.jobs.each do |job|%>  
+          <% @employees.where(id: job.employee_id).each do |employee|%>
             <div class= "profile thumbnail col-xs-8 col-sm-2">
               <a href="/employees/<%= job.employee_id%>">
                  <%= image_tag employee.image_url, :class=> "photo" %>
@@ -21,11 +23,12 @@
               <div>
                 <%= link_to employee.name, "/employees/#{job.employee_id}", :class=> "name" %>
               </div>
-                <%= link_to job.name, "/jobs/#{job.id}", :class=> "name" %>
-                <%= "of" %>
-                <%= link_to job.department.name, "/jobs/#{job.id}", :class=> "name" %>
+              <div>
+                <a href="/jobs/<%=job.id%>"><%= job.role.name %> of <%=job.department.name%></p>
+              </div>
             </div>
-          <% end %>
+          <% end %>  
+        <% end %>
       <% end %>
   </div> 
 <% end %>

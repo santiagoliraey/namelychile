@@ -7,14 +7,10 @@
 
     <%= bootstrap_form_for(@job) do |form| %>
     
-      <%= form.text_field :name, label: "Job Title" %>
       <%= form.collection_select :employee_id, Employee.all, :id, :name %>
-      <%= form.date_field :enroll, label: "Enrollment Date" %>
+      <%= form.collection_select :role_id, Role.all, :id, :name, label: "Role" %>
       <%= form.collection_select :department_id, Department.all, :id, :name, label: "Department" %>
-      <%= form.collection_select :division_id, Division.all, :id, :name, label: "Division" %>
-      <div class="form-group">
-        <%= form.select :healthplan, (options_for_select ["Aetna","Bluecross","Unicare","Wellpoint","Concordia"]) %> 
-      </div>
+      <%= form.date_field :enroll, label: "Enrollment Date" %>
       <%= form.number_field :grosswage, label: "Monthly Gross Wage" %>
       <%= form.submit class: 'btn btn-success'%>
 

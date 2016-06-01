@@ -1,0 +1,18 @@
+<div class="row">
+
+  <div class="col-sm-4">
+    <h1 class="add">Edit Role</h1>
+  </div>
+  <div class="col-sm-4">
+
+    <%= bootstrap_form_for(@role) do |form| %>
+
+      <%= form.text_field :name %>
+
+      or
+      
+      <%= link_to "Cancel", "/divisions" %>
+    <% end %>
+
+</div>
+</div>
